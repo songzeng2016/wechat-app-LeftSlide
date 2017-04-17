@@ -33,7 +33,7 @@
 </view>
 ```
 
-    主要就是用的小程序的 touch 来进行处理
+    主要就是用的小程序的 touch 事件来进行处理
 
     样式就不说了， 可以自己写， 不想写的同学也可以拿来直接用。
     
@@ -60,4 +60,41 @@ touchS: function (e) {  // touchstart
   },
   ```
   
-    事件函数主演也是 touch 的三个事件和删除事件， 每个事件的核心是更新数据， 也就是 setData()
+    事件函数主演也是 touch 的三个事件还有删除事件， 每个事件的核心是更新数据， 也就是 setData()
+    
+#### 数据处理函数
+
+    数据处理的函数我单独拿了出来， 这样有利于复用。 放在 utils 文件夹下的 Touches.js 文件里面
+    
+``` javascript
+touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
+        let list = this._resetData(dataList)
+        list[this._getIndex(e)].left = this._getMoveX(e, startX)
+        return list
+    }
+
+    touchE(e, dataList, startX, width) {  // touchend 更新列表数据
+        let list = this._resetData(dataList)
+        let disX = this._getEndX(e, startX)
+        let left = 0
+
+        if (disX < 0) {  // 判断滑动方向， （向左滑动）
+            // 滑动的距离大于删除宽度的一半就显示操作列表 否则不显示
+            Math.abs(disX) > width / 2 ? left = -width : left = 0
+        } else {  // 向右滑动复位
+            left = 0
+        }
+
+        list[this._getIndex(e)].left = left
+        return list
+    }
+
+    deleteItem(e, dataList) {  // 删除功能
+        dataList.splice(this._getIndex(e), 1)
+        return dataList
+    }
+```
+
+    每个函数都有注释说明， 相信都能看得懂， 就不多解释了。 
+    
+    有什么更好的方法， 或建议欢迎提出。 感觉本轮子还可以欢迎 Star 。
