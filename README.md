@@ -4,6 +4,8 @@
 
 ## 废话不多说， 先看效果， 能满足您的需求， 您在接着往下看。
 
+
+
 ![](./images/gif.gif)
 
 
@@ -33,9 +35,9 @@
 </view>
 ```
 
-    主要就是用的小程序的 touch 事件来进行处理
-
-    样式就不说了， 可以自己写， 不想写的同学也可以拿来直接用。
+     主要就是用的小程序的 touch 事件来进行处理
+     
+     样式就不说了， 可以自己写， 不想写的同学也可以拿来直接用。
     
 #### 然后就是事件的处理函数了
 
@@ -58,13 +60,15 @@ touchS: function (e) {  // touchstart
     let itemData = App.Touches.deleteItem(e, this.data.itemData)
     itemData && this.setData({ itemData })
   },
+  
   ```
   
-    事件函数主演也是 touch 的三个事件还有删除事件， 每个事件的核心是更新数据， 也就是 setData()
+      事件函数主演也是 touch 的三个事件还有删除事件， 每个事件的核心是更新数据， 也就是 setData()
+    
     
 #### 数据处理函数
 
-    数据处理的函数我单独拿了出来， 这样有利于复用。 放在 utils 文件夹下的 Touches.js 文件里面
+    数据处理的函数我单独拿了出来， 这样有利于复用。 放在 utils 文件夹下的 Touches.js 文件里面
     
 ``` javascript
 touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
@@ -95,6 +99,6 @@ touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
     }
 ```
 
-    每个函数都有注释说明， 相信都能看得懂， 就不多解释了。 
-    
-    有什么更好的方法， 或建议欢迎提出。 感觉本轮子还可以欢迎 Star 。
+    每个函数都有注释说明， 相信都能看得懂， 就不多解释了。 
+      
+    有什么更好的方法， 或建议欢迎提出。 感觉本轮子还可以欢迎 Star 。
