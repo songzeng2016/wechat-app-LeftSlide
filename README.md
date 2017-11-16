@@ -102,3 +102,5 @@ touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
     每个函数都有注释说明， 相信都能看得懂， 就不多解释了。 
       
     有什么更好的方法， 或建议欢迎提出。 感觉本轮子还可以欢迎 Star 。
+    
+[微信小程序 自定义tabbar](https://github.com/songzeng2016/wechat-app-tabbar)
