@@ -104,5 +104,6 @@ touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
     有什么更好的方法， 或建议欢迎提出。 感觉本轮子还可以欢迎 Star 。
     
  
-[微信小程序仿微信， QQ 向左滑动删除操作。](https://github.com/songzeng2016/wechat-app-LeftSlide) 
+[微信小程序仿微信， QQ 向左滑动删除操作](https://github.com/songzeng2016/wechat-app-LeftSlide) 
+
 [微信小程序 自定义tabbar](https://github.com/songzeng2016/wechat-app-tabbar)
